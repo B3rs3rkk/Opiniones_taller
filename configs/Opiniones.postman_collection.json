@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "af1e787b-3a1b-421e-8eed-790c227f0afc",
+		"name": "Opiniones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37523458"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "agregar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "nombre",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "correo",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "rol",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "profilePicture",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "diego santnadrea",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "santandrea",
+									"type": "text"
+								},
+								{
+									"key": "correo",
+									"value": "santandrea@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "USER_ROLE",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/USUARIO/Pictures/Screenshots/Captura de pantalla 2025-01-24 153137.png",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestor/v1/auth/registrar",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestor",
+								"v1",
+								"auth",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loggiar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"ethan\",\r\n    \"correo\":\"ethan@gmail.com\",\r\n    \"password\":\"66666666\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestor/v1/auth/loggiar",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestor",
+								"v1",
+								"auth",
+								"loggiar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizarUsuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4OTJjNmU4YmQ1NDI5NzBiYTUyZmEiLCJpYXQiOjE3NDAxNTQ4NTEsImV4cCI6MTc0MDE1ODQ1MX0.mh7mfW3u8Y9zu5NOiiRgailFR3-g_4KpaQZuWFHHQbY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestor/v1/usuarios/update/67b88fe9d9aa1b7b922abeb7",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestor",
+								"v1",
+								"usuarios",
+								"update",
+								"67b88fe9d9aa1b7b922abeb7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizarContra",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4OTJjNmU4YmQ1NDI5NzBiYTUyZmEiLCJpYXQiOjE3NDAxNTQ4NTEsImV4cCI6MTc0MDE1ODQ1MX0.mh7mfW3u8Y9zu5NOiiRgailFR3-g_4KpaQZuWFHHQbY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldpassword\":\"66666666\",\r\n    \"newpassword\":\"77777777\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestor/v1/usuarios/update_password/67b88fe9d9aa1b7b922abeb7",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestor",
+								"v1",
+								"usuarios",
+								"update_password",
+								"67b88fe9d9aa1b7b922abeb7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "publicaciones",
+			"item": [
+				{
+					"name": "agregarpubli",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4ZmE5MzMwNDM5ZjVhMWQyNDEwZjEiLCJpYXQiOjE3NDAxNzYwNTUsImV4cCI6MTc0MDE3OTY1NX0.x3raxzqU-ygyui7UEbh3uPC4242G9CI0zXtk-hE5a_Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\":\"Humor\",\r\n    \"descripcion\":\"Esta categoria se basa en hacer reir a la gente\",\r\n    \"categoria\":\"67b8f1a5d5702eaeaab813d5\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestor/v1/publicaciones/agregarPublicacion",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestor",
+								"v1",
+								"publicaciones",
+								"agregarPublicacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar e eliminar publicaciones",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4ZmE5MzMwNDM5ZjVhMWQyNDEwZjEiLCJpYXQiOjE3NDAxNzYwNTUsImV4cCI6MTc0MDE3OTY1NX0.x3raxzqU-ygyui7UEbh3uPC4242G9CI0zXtk-hE5a_Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"descripcion\":\"esta publicacion es para hacerte morir de risa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestor/v1/publicaciones/actualizarPublicacion/67b9023aa58e133fdefc4c4b",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestor",
+								"v1",
+								"publicaciones",
+								"actualizarPublicacion",
+								"67b9023aa58e133fdefc4c4b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4ZmE5MzMwNDM5ZjVhMWQyNDEwZjEiLCJpYXQiOjE3NDAxNzYwNTUsImV4cCI6MTc0MDE3OTY1NX0.x3raxzqU-ygyui7UEbh3uPC4242G9CI0zXtk-hE5a_Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestor/v1/publicaciones/eliminarPublicacion/67b9023aa58e133fdefc4c4b",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestor",
+								"v1",
+								"publicaciones",
+								"eliminarPublicacion",
+								"67b9023aa58e133fdefc4c4b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "opiniones",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4ZmE5MzMwNDM5ZjVhMWQyNDEwZjEiLCJpYXQiOjE3NDAxODM3NjMsImV4cCI6MTc0MDE4NzM2M30.gpxMLMxVimiNYeZNUidyuQOaIKFZzsFaFFFRnEp7Rxo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "descipcion",
+								"value": "no me gusto la publicacion ",
+								"type": "text"
+							},
+							{
+								"key": "usuario",
+								"value": "ethann",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ethann\",\r\n    \"descipcion\": \"Esta es una opinión de prueba\",\r\n    \"idPublicacion\":\"67b901a0a58e133fdefc4c48\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestor/v1/opiniones/agregarOpinion",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestor",
+								"v1",
+								"opiniones",
+								"agregarOpinion"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
